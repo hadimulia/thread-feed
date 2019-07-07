@@ -1,5 +1,7 @@
 package com.app.thread.lib.storage;
 
+import java.util.Map;
+
 /**
  *
  * @author taufuk.muliahadi (&copy;Jul 7, 2019) 
@@ -19,4 +21,5 @@ public interface IMemoryQ<DATA> {
 	boolean pushNotify(DATA data);
 	void destroy();
 	String getQKey();
+	Map<String, String> rssThread();
 }
