@@ -1,4 +1,4 @@
-package com.app.feed.core;
+/*package com.app.feed.core;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,3 +14,4 @@ public class FeedCoreApplicationTests {
 	}
 
 }
+*/

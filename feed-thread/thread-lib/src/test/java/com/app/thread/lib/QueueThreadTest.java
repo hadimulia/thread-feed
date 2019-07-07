@@ -37,7 +37,7 @@ public class QueueThreadTest {
 			logger.error("Error...!", e);
 		} finally {
 			logger.info("end...");
-			UtilThread.doSleep(25000);
+			UtilThread.doSleep(5000);
 		}
 	}
 
