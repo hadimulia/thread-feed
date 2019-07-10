@@ -47,7 +47,6 @@ public class GetFeedRss {
 				while ((responseLine = br.readLine()) != null) {
 					response.append(responseLine);
 				}
-				System.out.println(response);
 			}
 		} catch (IOException e) {
 			logger.error("Get Url Error", e);

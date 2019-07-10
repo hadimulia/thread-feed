@@ -1,10 +1,14 @@
 package com.app.feed.core.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Table(name="rss_feed_domain")
@@ -16,10 +20,20 @@ public class RssFeedDomain {
 	private Long id;
 	
 	@Column
-	private String domain;
+	private String domainName;
 	
-	@Column
-	private Integer interval;
+	@OneToMany(mappedBy = "rssFeedDomain", cascade = CascadeType.ALL)
+	private List<RssFeedContent> rssFeedContent;
+	
+	
+	public RssFeedDomain() {
+		super();
+	}
+
+	public RssFeedDomain(String domainName) {
+		super();
+		this.domainName = domainName;
+	}
 
 	public Long getId() {
 		return id;
@@ -29,21 +43,20 @@ public class RssFeedDomain {
 		this.id = id;
 	}
 
-	public String getDomain() {
-		return domain;
+	public String getDomainName() {
+		return domainName;
 	}
 
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
-
-	public Integer getInterval() {
-		return interval;
-	}
-
-	public void setInterval(Integer interval) {
-		this.interval = interval;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 	
-	
+	public List<RssFeedContent> getRssFeedContent() {
+		return rssFeedContent;
+	}
+
+	public void setRssFeedContent(List<RssFeedContent> rssFeedContent) {
+		this.rssFeedContent = rssFeedContent;
+	}
+
 }
