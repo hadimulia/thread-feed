@@ -23,7 +23,7 @@ public class RssFeedContentServiceImpl implements RssFeedContentService {
 	private GetFeedRss getFeedRss;
 
 	@Override
-	public void streamRss(RssFeedDomain domain) {
+	public RssFeedContent streamRss(RssFeedDomain domain) {
 		logger.info("prepate data ");
 		Map<String, String> header = new HashMap<>();
 		header.put("Accept", "text/plain");
@@ -37,6 +37,8 @@ public class RssFeedContentServiceImpl implements RssFeedContentService {
 		rssFeedContent.setContent(content);
 		
 		logger.info("content : ".concat(rssFeedContent.toString()));
+		
+		return rssFeedContent;
 	}
 	
 }

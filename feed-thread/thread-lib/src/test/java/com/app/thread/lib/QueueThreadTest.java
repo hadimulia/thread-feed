@@ -62,7 +62,6 @@ public class QueueThreadTest {
 				logger.error("pull=" + obj);
 				UtilThread.doSleep(100);
 				mq.rssThread().remove(obj.getLinkRssFed());
-				
 			}
 		}
 	}
