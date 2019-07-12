@@ -34,7 +34,7 @@ public class TrheadProcess implements Runnable{
 			logger.info("["+threadName+"] start process get RSS ");
 			RssFeedContent rssFeedContent = rssFeedContentService.streamRss(rssFeedDomain);
 			mq.rssThread().remove(rssFeedContent.getLinkRssFed());
-			logger.info("["+threadName+"] end process process get RSS ");
+			logger.info("["+threadName+"] end process get RSS ");
 			UtilThread.doSleep(100);
 		}
 		

@@ -69,6 +69,14 @@ public class RssFeedContent extends BaseRssFeed{
 	public void setCreatedTime(Date createdTime) {
 		this.createdTime = createdTime;
 	}
+	
+	public RssFeedDomain getRssFeedDomain() {
+		return rssFeedDomain;
+	}
+
+	public void setRssFeedDomain(RssFeedDomain rssFeedDomain) {
+		this.rssFeedDomain = rssFeedDomain;
+	}
 
 	@Override
 	public String toString() {

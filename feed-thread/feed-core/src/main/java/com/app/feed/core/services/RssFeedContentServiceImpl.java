@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 
+import com.app.feed.core.dao.RssFeedContentDao;
 import com.app.feed.core.entity.RssFeedContent;
 import com.app.feed.core.entity.RssFeedDomain;
 import com.app.feed.core.rss.GetFeedRss;
@@ -21,6 +22,10 @@ public class RssFeedContentServiceImpl implements RssFeedContentService {
 	
 	@Autowired
 	private GetFeedRss getFeedRss;
+	
+	@Autowired
+	private RssFeedContentDao contentDao;
+	
 
 	@Override
 	public RssFeedContent streamRss(RssFeedDomain domain) {
@@ -35,6 +40,9 @@ public class RssFeedContentServiceImpl implements RssFeedContentService {
 		rssFeedContent.setCreatedTime(new Date());
 		rssFeedContent.setLinkRssFed(domain.getDomainName());
 		rssFeedContent.setContent(content);
+		rssFeedContent.setRssFeedDomain(domain);
+		
+		contentDao.save(rssFeedContent);
 		
 		logger.info("content : ".concat(rssFeedContent.toString()));
 		
