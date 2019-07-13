@@ -1,12 +1,14 @@
 Prerequisite : 
-	- Java 1.8 
-	- Mysql
-	- Maven (optional)
-	
-Configuration
-	- you can run the app in folder "App"
-	- before you running the app, you should change the configuration database in folder "resources/application.properties"
-	- and then run the file "run.bat" or "run.sh"
-	
+	<ul>
+		<li>Java 1.8</li>
+		<li>Mysql</li>
+		<li>Maven (optional)</li>
+	</ul>
+Configuration : 
+	<ul>
+		<li>you can run the app in folder "App"</li>
+		<li> efore you running the app, you should change the configuration database in folder "resources/application.properties"</li>
+		<li>and then run the file "run.bat" or "run.sh"</li>
+	</ul>
 Cheeres....!	
 	
