@@ -11,6 +11,11 @@ import org.springframework.stereotype.Component;
 
 import com.app.feed.core.constant.ThreadConstant;
 
+/**
+ * Building thread on start up application
+ *
+ * @author taufuk.muliahadi (&copy;Jul 13, 2019) 
+ */
 @Component
 public class ThreadBuilder {
 

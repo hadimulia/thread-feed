@@ -13,6 +13,11 @@ import com.app.thread.lib.storage.IMemoryQ;
 import com.app.thread.lib.storage.impl.MemoryQFactory;
 import com.app.thread.lib.util.UtilThread;
 
+/**
+ * thread process to get content
+ *
+ * @author taufuk.muliahadi (&copy;Jul 13, 2019) 
+ */
 @Component
 public class TrheadProcess implements Runnable{
 	

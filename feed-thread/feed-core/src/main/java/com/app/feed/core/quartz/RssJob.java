@@ -5,17 +5,19 @@ import org.apache.logging.log4j.Logger;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 
 import com.app.feed.core.constant.ThreadConstant;
 import com.app.feed.core.entity.RssFeedDomain;
-import com.app.feed.core.services.RssFeedContentService;
-import com.app.thread.lib.dto.BaseRssFeed;
 import com.app.thread.lib.storage.IMemoryQ;
 import com.app.thread.lib.storage.impl.MemoryQFactory;
 
+/**
+ * execute job quartz
+ *
+ * @author taufuk.muliahadi (&copy;Jul 13, 2019) 
+ */
 @Component
 public class RssJob extends QuartzJobBean{
 

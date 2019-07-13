@@ -12,10 +12,21 @@ import org.springframework.stereotype.Component;
 
 import com.app.feed.core.entity.RssFeedDomain;
 
+/**
+ *
+ * @author taufuk.muliahadi (&copy;Jul 13, 2019) 
+ */
 @Component
 public class BuildJob {
 
-	 public JobDetail buildJobDetail(RssFeedDomain domain) {
+	 /**
+	 * create Job Detail
+	 *
+	 * @author taufuk.muliahadi (&copy;Jul 13, 2019)
+	 * @param domain
+	 * @return
+	 */
+	public JobDetail buildJobDetail(RssFeedDomain domain) {
 		 JobDataMap jobDataMap = new JobDataMap();
 		 jobDataMap.put("domain", domain);
 		 return JobBuilder.newJob(RssJob.class)
@@ -25,7 +36,15 @@ public class BuildJob {
 				 .build();
 	 }
 	 
-	 public Trigger buildJobTriger(JobDetail jobDetail) {
+	
+	 /**
+	 * create triger every 15 minute
+	 *
+	 * @author taufuk.muliahadi (&copy;Jul 13, 2019)
+	 * @param jobDetail
+	 * @return
+	 */
+	public Trigger buildJobTriger(JobDetail jobDetail) {
 		 return TriggerBuilder.newTrigger()
 				 .forJob(jobDetail)
 				 .withIdentity(jobDetail.getKey().getName())

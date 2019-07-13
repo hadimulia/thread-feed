@@ -1,5 +1,9 @@
 package com.app.thread.lib.dto;
 
+/**
+ *
+ * @author taufuk.muliahadi (&copy;Jul 13, 2019) 
+ */
 public class BaseRssFeed {
 
 	private String linkRssFed;

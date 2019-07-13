@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.app.feed.core.dao.RssFeedContentDao;
 import com.app.feed.core.entity.RssFeedContent;
@@ -36,15 +37,17 @@ public class RssFeedContentServiceImpl implements RssFeedContentService {
 		String content = getFeedRss.getReponseFromURL(domain.getDomainName(), HttpMethod.GET, header);
 		
 		RssFeedContent rssFeedContent = new RssFeedContent();
-		rssFeedContent.setDomain(domain.getDomainName());
-		rssFeedContent.setCreatedTime(new Date());
-		rssFeedContent.setLinkRssFed(domain.getDomainName());
-		rssFeedContent.setContent(content);
-		rssFeedContent.setRssFeedDomain(domain);
-		
-		contentDao.save(rssFeedContent);
-		
-		logger.info("content : ".concat(rssFeedContent.toString()));
+		if(!StringUtils.isEmpty(content)) {
+			rssFeedContent.setDomain(domain.getDomainName());
+			rssFeedContent.setCreatedTime(new Date());
+			rssFeedContent.setLinkRssFed(domain.getDomainName());
+			rssFeedContent.setContent(content);
+			rssFeedContent.setRssFeedDomain(domain);
+			
+			contentDao.save(rssFeedContent);
+			logger.info("content : ".concat(rssFeedContent.toString()));
+			
+		}
 		
 		return rssFeedContent;
 	}
