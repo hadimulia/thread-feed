@@ -1,3 +1,4 @@
+This sampel apps, for scrap raw html using nstive java multi thread <br/>
 Prerequisite : 
 	<ul>
 		<li>Java 1.8</li>
